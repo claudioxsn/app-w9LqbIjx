@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProdutoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('produto')->group(function () {
+   
+    Route::get('/', [ProdutoController::class, 'index'])->name('produto.all'); 
+    Route::post('/', [ProdutoController::class, 'store'])->name('produto.store'); 
+    Route::get('/search/{sku}', [ProdutoController::class, 'findBySku'])->name('produto.findBySku'); 
+    Route::get('/{id}', [ProdutoController::class, 'findById'])->name('produto.findById'); 
+    Route::put('/update', [ProdutoController::class, 'update'])->name('produto.update'); 
+    Route::delete('/delete/{id}', [ProdutoController::class, 'delete'])->name('produto.delete');
+
 });

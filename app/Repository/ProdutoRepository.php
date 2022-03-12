@@ -21,6 +21,11 @@ class ProdutoRepository extends AbstractRepository
         return $this->getModel()->paginate(10);
     }
 
+    public function findBySku($sku)
+    {
+        return $this->getModel()->where('sku', $sku)->first();
+    }
+
     public function findById($id)
     {
         return $this->getModel()->find($id);
