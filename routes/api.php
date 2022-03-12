@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MovimentacaoController;
 use App\Http\Controllers\ProdutoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,3 +26,13 @@ Route::prefix('produto')->group(function () {
     Route::delete('/delete/{id}', [ProdutoController::class, 'delete'])->name('produto.delete');
 
 });
+
+
+Route::prefix('movimentacao')->group(function () {
+   
+    Route::post('/', [MovimentacaoController::class, 'movimentar'])->name('movimentar');
+
+    Route::get('/historico/{sku}', [MovimentacaoController::class, 'historicoPorSku'])->name('movimentacao.history.bysku'); 
+});
+
+
