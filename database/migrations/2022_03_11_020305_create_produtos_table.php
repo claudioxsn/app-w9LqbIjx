@@ -14,10 +14,10 @@ class CreateProdutosTable extends Migration
     public function up()
     {
         Schema::create('produtos', function (Blueprint $table) {
+            $table->id();
             $table->string('nome', 60)->nullable(false); 
             $table->string('sku', 20)->unique()->nullable(false); 
             $table->integer('quantidade_inicial')->nullable(false); 
-            $table->primary('sku');
             $table->timestamps();
         });
     }

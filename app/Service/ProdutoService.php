@@ -33,8 +33,9 @@ class ProdutoService
     }
 
     public function findById($id)
-    {
+    {       
         $produto = $this->produtoRepository->findById($id);
+
         if (!isset($produto)) {
             return;
         }
@@ -51,6 +52,15 @@ class ProdutoService
         return $response;
     }
 
+    public function findBySku($id)
+    {
+        $produto = $this->produtoRepository->findBySku($id);
+        if (!isset($produto)) {
+            return;
+        }
+        return $produto;
+    }
+    
     public function delete($data)
     {
         return $this->produtoRepository->deleteProduto($data);
