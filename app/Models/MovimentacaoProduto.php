@@ -9,6 +9,6 @@ class MovimentacaoProduto extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['produto_sku', 'quantidade', 'data_movimentacao']; 
+    protected $fillable = ['produto_id', 'produto_sku', 'quantidade','tipo_movimentacao', 'data_movimentacao']; 
     
 }

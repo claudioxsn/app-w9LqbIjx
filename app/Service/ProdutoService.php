@@ -15,6 +15,8 @@ class ProdutoService
 
     public function store(array $data)
     {
+        $data['quantidade_estoque'] = $data['quantidade_inicial'];
+        
         $response = $this->produtoRepository->store($data);
 
         if (!isset($response)) {
