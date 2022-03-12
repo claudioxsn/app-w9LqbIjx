@@ -13,7 +13,9 @@ Laravel Framework 8.83.4
 
 ## Instalação do Projeto
 
-Após efetuar o clone do projeto, executar os seguintes comandos: 
+Após efetuar o clone do projeto, criar um banco de dados e um arquivo .env baseado no env.example.
+
+Insira os dados de conexão com o banco no .env e execute os seguintes comandos: 
 
 -> composer install; 
 
