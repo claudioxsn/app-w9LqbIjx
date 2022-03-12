@@ -14,10 +14,12 @@ Laravel Framework 8.83.4
 ## Instalação do Projeto
 
 Após efetuar o clone do projeto, executar os seguintes comandos: 
--> composer install; 
--> composer update; 
--> php artisan migrate 
 
+-> composer install; 
+
+-> composer update; 
+
+-> php artisan migrate 
 
 ## Endpoints
 
